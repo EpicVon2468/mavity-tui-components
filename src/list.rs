@@ -148,20 +148,20 @@ impl<'a> List<'a> {
 }
 
 impl<T: App> Component<T> for List<'_> {
-	fn propagate_events(&mut self, app: &T) -> anyhow::Result<bool> {
+	fn propagate_events(&mut self, app: &T) -> bool {
 		if app.is_key_down(KeyCode::Up) {
 			self.select_prev();
-			return Ok(true);
+			return true;
 		};
 		if app.is_key_down(KeyCode::Down) {
 			self.select_next();
-			return Ok(true);
+			return true;
 		};
 		if app.is_key_down(KeyCode::Enter) {
 			self.toggle_confirmed(self.selected);
-			return Ok(true);
+			return true;
 		};
-		Ok(false)
+		false
 	}
 
 	// TODO: handle scroll if items is longer than area's height

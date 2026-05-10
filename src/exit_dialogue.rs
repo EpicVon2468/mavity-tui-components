@@ -122,21 +122,21 @@ impl ExitDialogue {
 }
 
 impl<T: App> Component<T> for ExitDialogue {
-	fn propagate_events(&mut self, app: &T) -> anyhow::Result<bool> {
+	fn propagate_events(&mut self, app: &T) -> bool {
 		if self.state != DialogueState::Shown {
-			return Ok(false);
+			return false;
 		};
 
 		if app.should_shl() || app.should_shr() {
 			self.selected = !self.selected;
-			return Ok(true);
+			return true;
 		};
 		if app.is_key_down(KeyCode::Enter) {
 			self.state = DialogueState::Hidden(self.selected);
-			return Ok(true);
+			return true;
 		};
 		// ExitDialogue consumes all input events as it is the primary focus Component if it is shown
-		Ok(true)
+		true
 	}
 
 	fn render(&self, frame: &mut Frame, area: Rect, _app: &T) {

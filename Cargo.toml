@@ -37,9 +37,6 @@ features = [
 ]
 default-features = false
 
-[dependencies.anyhow]
-version = ">=1.0.102, <2"
-
 [dependencies.crossterm]
 version = ">=0.29.0, <1"
 
