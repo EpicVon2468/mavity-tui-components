@@ -22,7 +22,6 @@
 	clippy::branches_sharing_code,
 	clippy::infinite_loop,
 	clippy::linkedlist,
-	clippy::pub_use,
 	clippy::wildcard_imports,
 	clippy::uninlined_format_args,
 	clippy::equatable_if_let,
@@ -58,6 +57,10 @@
 )]
 #![allow(clippy::borrowed_box)]
 #![feature(const_trait_impl)]
-pub mod app;
-pub mod component;
-pub mod page;
+mod app;
+mod component;
+mod page;
+
+pub use app::*;
+pub use component::*;
+pub use page::*;

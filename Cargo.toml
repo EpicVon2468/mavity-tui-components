@@ -10,6 +10,18 @@ description = "Some premade abstractions around Ratatui for my personal purposes
 homepage = "https://github.com/EpicVon2468/mavity-tui-components/"
 repository = "https://github.com/EpicVon2468/mavity-tui-components/"
 license = "MIT OR Apache-2.0"
+autolib = false
+autobins = false
+
+[lib]
+name = "mtc"
+path = "src/lib.rs"
+test = true
+doctest = false
+bench = true
+doc = true
+proc-macro = false
+harness = true
 
 [dependencies.ratatui-core]
 version = ">=0.1.0, <1"
