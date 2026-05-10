@@ -56,14 +56,16 @@
 	reason = "Shush"
 )]
 #![allow(clippy::borrowed_box)]
-#![feature(const_trait_impl)]
+#![feature(const_trait_impl, derive_const, const_cmp, const_default)]
 mod app;
 mod component;
+mod exit_dialogue;
 mod list;
 mod page;
 
 pub use app::*;
 pub use component::*;
+pub use exit_dialogue::*;
 pub use list::*;
 pub use page::*;
 
