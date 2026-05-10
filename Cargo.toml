@@ -1,0 +1,25 @@
+[package]
+name = "mavity-tui-components"
+version = "0.0.0"
+authors = [
+	"Mavity The Madity",
+]
+edition = "2024"
+rust-version = "1.97.0"
+description = "Some premade abstractions around Ratatui for my personal purposes."
+homepage = "https://github.com/EpicVon2468/mavity-tui-components/"
+repository = "https://github.com/EpicVon2468/mavity-tui-components/"
+license = "MIT OR Apache-2.0"
+
+[dependencies.ratatui-core]
+version = ">=0.1.0, <1"
+features = [
+	"std",
+]
+default-features = false
+
+[dependencies.anyhow]
+version = ">=1.0.102, <2"
+
+[dependencies.crossterm]
+version = ">=0.29.0, <1"
