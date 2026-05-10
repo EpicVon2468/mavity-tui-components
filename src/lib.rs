@@ -93,7 +93,8 @@ macro_rules! static_anything {
 #[macro_export]
 macro_rules! centred_horizontally {
 	($area:expr, $width:expr $(,)?) => {
-		$area.centered_horizontally(ratatui_core::layout::Constraint::Length($crate::to_u16!(
+		// can't use absolute path import because applications usually depend on ratatui, not ratatui-core
+		$area.centered_horizontally(Constraint::Length($crate::to_u16!(
 			$width
 		)))
 	};

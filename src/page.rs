@@ -1,7 +1,6 @@
 use anyhow::Result;
 
-use crate::app::App;
-use crate::component::Component;
+use super::{App, Component};
 
 type NewPage<T> = Option<Box<dyn Page<T>>>;
 

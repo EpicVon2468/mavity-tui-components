@@ -3,7 +3,7 @@ use anyhow::Result;
 use ratatui_core::layout::Rect;
 use ratatui_core::terminal::Frame;
 
-use crate::app::App;
+use super::App;
 
 pub const trait Component<T: App> {
 	/// Pre-[`render`][`Component::render`] input/logic checks.
