@@ -122,7 +122,7 @@ impl ExitDialogue {
 }
 
 impl<T: App> Component<T> for ExitDialogue {
-	fn propagate_events(&mut self, app: &T) -> bool {
+	fn propagate_events(&mut self, app: &mut T) -> bool {
 		if self.state != DialogueState::Shown {
 			return false;
 		};

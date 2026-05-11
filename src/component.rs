@@ -10,7 +10,7 @@ pub const trait Component<T: App> {
 	///
 	/// Implementations are expected to follow a bottom-up hierarchy of evaluation, where a [`Component`] may only process events if all its children have first been processed, and none have returned `true`.
 	#[allow(unused_variables)]
-	fn propagate_events(&mut self, app: &T) -> bool {
+	fn propagate_events(&mut self, app: &mut T) -> bool {
 		false
 	}
 

@@ -148,7 +148,7 @@ impl<'a> List<'a> {
 }
 
 impl<T: App> Component<T> for List<'_> {
-	fn propagate_events(&mut self, app: &T) -> bool {
+	fn propagate_events(&mut self, app: &mut T) -> bool {
 		if app.is_key_down(KeyCode::Up) {
 			self.select_prev();
 			return true;
