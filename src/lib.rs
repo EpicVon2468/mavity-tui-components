@@ -106,3 +106,30 @@ macro_rules! to_u16 {
 		u16::try_from($value).unwrap_or(u16::MAX)
 	};
 }
+
+#[macro_export]
+macro_rules! shift_horizontal {
+	($name:ty, $u_type:ty $(,)?) => {
+		impl $name {
+			fn shift_left(&mut self) -> &mut Self {
+				let old: $u_type = self.selected;
+				self.selected = if old == 0 {
+					self.last_index()
+				} else {
+					old.saturating_sub(1)
+				};
+				self
+			}
+
+			fn shift_right(&mut self) -> &mut Self {
+				let old: $u_type = self.selected;
+				self.selected = if old == self.last_index() {
+					0
+				} else {
+					old.saturating_add(1)
+				};
+				self
+			}
+		}
+	};
+}
